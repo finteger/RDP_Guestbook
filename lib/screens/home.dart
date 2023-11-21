@@ -24,16 +24,8 @@ class _HomePageState extends State<HomePage> {
               Icon(Icons.notifications),
             ]),
       ),
-      drawer: Drawer(),
-      body: Container(
-        height: 290,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 62, 16, 16),
-        ),
-        child: const Image(
-          image: AssetImage("assets/images/cat.webp"),
-        ),
-      ),
+      drawer: const Drawer(),
+      body: Placeholder(),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.add),
