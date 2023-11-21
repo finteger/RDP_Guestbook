@@ -25,7 +25,27 @@ class _HomePageState extends State<HomePage> {
             ]),
       ),
       drawer: const Drawer(),
-      body: Placeholder(),
+      body: GridView.count(
+          scrollDirection: Axis.horizontal,
+          crossAxisCount: 1,
+          children: <Widget>[
+            Container(
+              width: 160,
+              color: Colors.red,
+            ),
+            Container(
+              width: 160,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 160,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 160,
+              color: Colors.green,
+            ),
+          ]),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.add),
