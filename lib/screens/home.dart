@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/route/route.dart' as route;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,7 +26,12 @@ class _HomePageState extends State<HomePage> {
             ]),
       ),
       drawer: const Drawer(),
-      body: Placeholder(),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Settings Page"),
+          onPressed: () => Navigator.pushNamed(context, route.settingsPage),
+        ),
+      ),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.add),

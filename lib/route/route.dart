@@ -14,9 +14,9 @@ Route<dynamic> controller(RouteSettings settings) {
     case loginPage:
       return MaterialPageRoute(builder: (context) => LoginPage());
     case homePage:
-      return MaterialPageRoute(builder: (context) => homePage());
+      return MaterialPageRoute(builder: (context) => HomePage());
     case settingsPage:
-      return MaterialPageRoute(builder: (context) => settingsPage());
+      return MaterialPageRoute(builder: (context) => SettingsPage());
     default:
       throw ('This route name does not exist!');
   }
