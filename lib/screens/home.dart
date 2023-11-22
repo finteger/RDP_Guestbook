@@ -25,7 +25,47 @@ class _HomePageState extends State<HomePage> {
               Icon(Icons.notifications),
             ]),
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.red,
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+                title: Padding(
+              padding: const EdgeInsets.all(28.0),
+              child: ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, route.homePage),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.home),
+                    Text("Home"),
+                  ],
+                ),
+              ),
+            )),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: ElevatedButton(
+                  onPressed: () =>
+                      Navigator.pushNamed(context, route.loginPage),
+                  child: Icon(Icons.login),
+                ),
+              ),
+            ),
+            ListTile(
+              title: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: ElevatedButton(
+                  onPressed: () =>
+                      Navigator.pushNamed(context, route.settingsPage),
+                  child: Icon(Icons.settings),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Center(
         child: ElevatedButton(
           child: Text("Settings Page"),
@@ -36,20 +76,35 @@ class _HomePageState extends State<HomePage> {
         onPressed: null,
         child: Icon(Icons.add),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.last_page),
-          label: 'Page',
-        ),
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.login),
+              label: 'Login',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+          onTap: (int index) {
+            switch (index) {
+              case 0:
+                Navigator.pushNamed(context, route.homePage);
+                break;
+              case 1:
+                Navigator.pushNamed(context, route.loginPage);
+                break;
+              case 2:
+                Navigator.pushNamed(context, route.settingsPage);
+                break;
+            }
+          }),
     );
   }
 }
