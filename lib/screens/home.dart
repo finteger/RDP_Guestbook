@@ -18,34 +18,14 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "My First Flutter App",
+                "Routing Example",
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
               Icon(Icons.notifications),
             ]),
       ),
       drawer: const Drawer(),
-      body: GridView.count(
-          scrollDirection: Axis.horizontal,
-          crossAxisCount: 1,
-          children: <Widget>[
-            Container(
-              width: 160,
-              color: Colors.red,
-            ),
-            Container(
-              width: 160,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 160,
-              color: Colors.yellow,
-            ),
-            Container(
-              width: 160,
-              color: Colors.green,
-            ),
-          ]),
+      body: Placeholder(),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.add),
